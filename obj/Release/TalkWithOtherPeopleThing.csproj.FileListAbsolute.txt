@@ -1,0 +1,16 @@
+C:\Users\sneak\source\repos\TalkWithOtherPeopleThing\TalkWithOtherPeopleThing\bin\Release\TalkWithOtherPeopleThing.exe.config
+C:\Users\sneak\source\repos\TalkWithOtherPeopleThing\TalkWithOtherPeopleThing\bin\Release\TalkWithOtherPeopleThing.exe
+C:\Users\sneak\source\repos\TalkWithOtherPeopleThing\TalkWithOtherPeopleThing\bin\Release\TalkWithOtherPeopleThing.pdb
+C:\Users\sneak\source\repos\TalkWithOtherPeopleThing\TalkWithOtherPeopleThing\obj\Release\TalkWithOtherPeopleThing.csprojAssemblyReference.cache
+C:\Users\sneak\source\repos\TalkWithOtherPeopleThing\TalkWithOtherPeopleThing\obj\Release\MainWindow.g.cs
+C:\Users\sneak\source\repos\TalkWithOtherPeopleThing\TalkWithOtherPeopleThing\obj\Release\WelcomeWindow.g.cs
+C:\Users\sneak\source\repos\TalkWithOtherPeopleThing\TalkWithOtherPeopleThing\obj\Release\App.g.cs
+C:\Users\sneak\source\repos\TalkWithOtherPeopleThing\TalkWithOtherPeopleThing\obj\Release\TalkWithOtherPeopleThing_MarkupCompile.cache
+C:\Users\sneak\source\repos\TalkWithOtherPeopleThing\TalkWithOtherPeopleThing\obj\Release\TalkWithOtherPeopleThing_MarkupCompile.lref
+C:\Users\sneak\source\repos\TalkWithOtherPeopleThing\TalkWithOtherPeopleThing\obj\Release\MainWindow.baml
+C:\Users\sneak\source\repos\TalkWithOtherPeopleThing\TalkWithOtherPeopleThing\obj\Release\WelcomeWindow.baml
+C:\Users\sneak\source\repos\TalkWithOtherPeopleThing\TalkWithOtherPeopleThing\obj\Release\TalkWithOtherPeopleThing.g.resources
+C:\Users\sneak\source\repos\TalkWithOtherPeopleThing\TalkWithOtherPeopleThing\obj\Release\TalkWithOtherPeopleThing.Properties.Resources.resources
+C:\Users\sneak\source\repos\TalkWithOtherPeopleThing\TalkWithOtherPeopleThing\obj\Release\TalkWithOtherPeopleThing.csproj.GenerateResource.cache
+C:\Users\sneak\source\repos\TalkWithOtherPeopleThing\TalkWithOtherPeopleThing\obj\Release\TalkWithOtherPeopleThing.exe
+C:\Users\sneak\source\repos\TalkWithOtherPeopleThing\TalkWithOtherPeopleThing\obj\Release\TalkWithOtherPeopleThing.pdb
