@@ -11,6 +11,7 @@ namespace TalkWithOtherPeopleThing
     /// </summary>
     public partial class WelcomeWindow : Window
     {
+        int clientOrServer = 2;
         public WelcomeWindow()
         {
             InitializeComponent();
@@ -19,18 +20,33 @@ namespace TalkWithOtherPeopleThing
         {
             string name = NameTextBox.Text;
             IPAddress clientIp = IPAddress.Parse(IpTextBox.Text);
-            IPAddress hostIp = IPAddress.Parse(HostIpTextBox.Text);
-            Int32 port = Int32.Parse(PortTextBox.Text);
+            string clientIpString = IpTextBox.Text;
+            IPAddress hostIp = IPAddress.Parse(UserIpTextBox.Text);
+            Int32 clientPort = Int32.Parse(ClientPortTextBox.Text);
+            Int32 listenerPort = Int32.Parse(ListenerPortTextBox.Text);
+            //0 for client
+            //1 for server
+            
+            if (ClientRadioButton.IsChecked == true)
+            {
+                clientOrServer = 0;
+            }
+            else if (ServerRadioButton.IsChecked == true)
+            {
+                clientOrServer = 1;
+            }
 
-            BeginConnection(name, clientIp, hostIp, port);
+            BeginConnection(name, clientIpString, clientIp, hostIp, clientPort, listenerPort , clientOrServer);
         }
-        private void BeginConnection(string name, IPAddress clientIp, IPAddress hostIp, int port)
-        {   
+        private void BeginConnection(string name, string clientIpString, IPAddress clientIp, IPAddress hostIp, Int32 clientPort, Int32 listenerPort , int clientOrServer)
+        {
             MainWindow mainWindow = new MainWindow();
-            mainWindow.ConnectToOtherPerson(name, clientIp, hostIp, port);
+            mainWindow.ConnectToOtherPerson(name, clientIpString, clientIp, hostIp, clientPort , listenerPort, clientOrServer);
             mainWindow.Show();
+            mainWindow.DoWork(mainWindow.client);
             this.Close();
         }
+
         private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
         {
 

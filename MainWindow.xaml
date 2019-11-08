@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800" Background=" #8c8c8c ">
     <Grid>
-        <TextBox x:Name="WriteTextBox" Margin="10,376,10,10" TextWrapping="Wrap" UndoLimit="20" Background="#6d6d6d" BorderBrush="Black" FontSize="22" Cursor="IBeam"/>
+        <TextBox x:Name="WriteTextBox" Margin="10,376,10,10" TextWrapping="Wrap" UndoLimit="20" Background="#6d6d6d" BorderBrush="Black" FontSize="20" Cursor="IBeam" KeyDown="OnEnterKeyDown"/>
         <Grid x:Name="MessagesGrid" ShowGridLines="False" Height="371" VerticalAlignment="Top" Background=" #8c8c8c " RenderTransformOrigin="0.503,0.5">
             <Grid.RowDefinitions>
                 <RowDefinition Height="0*"/>

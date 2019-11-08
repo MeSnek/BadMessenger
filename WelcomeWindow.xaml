@@ -5,17 +5,21 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TalkWithOtherPeopleThing"
         mc:Ignorable="d"
-        Title="Hi" Height="480" Width="300">
+        Title="Hi" Height="660" Width="300">
     <Grid Margin="2,0,2,1">
         <TextBlock Margin="10,10,10,0" TextWrapping="Wrap" Text="Your name" VerticalAlignment="Top" Height="40" IsEnabled="False" TextAlignment="Center" FontSize="24" RenderTransformOrigin="0.5,0.5"/>
         <TextBox x:Name="NameTextBox" Height="40" Margin="10,50,10,0" TextWrapping="Wrap" VerticalAlignment="Top" TextChanged="TextBox_TextChanged" FontSize="24"/>
         <TextBlock Margin="10,190,10,0" TextWrapping="Wrap" Text="Their IP" VerticalAlignment="Top" Height="40" IsEnabled="False" TextAlignment="Center" FontSize="24"/>
         <TextBox x:Name="IpTextBox" Height="40" Margin="10,230,10,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="24" TextChanged="IpTextBox_TextChanged"/>
-        <Button Content="Connect" Margin="10,377,10,10" Click="Button_Click" FontSize="48"/>
-        <TextBlock Margin="10,275,10,0" TextWrapping="Wrap" Text="Port" VerticalAlignment="Top" Height="40" IsEnabled="False" TextAlignment="Center" FontSize="24"/>
-        <TextBox x:Name="PortTextBox" Height="40" Margin="10,315,10,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="24" TextChanged="IpTextBox_TextChanged"/>
-        <TextBlock Margin="10,95,10,0" TextWrapping="Wrap" Text="Your IPv4" VerticalAlignment="Top" Height="40" IsEnabled="False" TextAlignment="Center" FontSize="24" RenderTransformOrigin="0.5,0.5"/>
-        <TextBox x:Name="HostIpTextBox" Height="40" Margin="10,135,10,0" TextWrapping="Wrap" VerticalAlignment="Top" TextChanged="TextBox_TextChanged" FontSize="24"/>
+        <Button Content="Connect" Margin="10,506,10,10" Click="Button_Click" FontSize="48"/>
+        <TextBlock Margin="10,360,10,0" TextWrapping="Wrap" Text="Their port" VerticalAlignment="Top" Height="40" IsEnabled="False" TextAlignment="Center" FontSize="24"/>
+        <TextBox x:Name="ClientPortTextBox" Height="40" Margin="10,400,10,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="24" TextChanged="IpTextBox_TextChanged"/>
+        <TextBlock Margin="10,95,10,0" TextWrapping="Wrap" Text="Your IP" VerticalAlignment="Top" Height="40" IsEnabled="False" TextAlignment="Center" FontSize="24" RenderTransformOrigin="0.5,0.5"/>
+        <TextBox x:Name="UserIpTextBox" Height="50" Margin="10,135,10,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="24" TextChanged="IpTextBox_TextChanged"/>
+        <TextBlock Margin="10,275,10,0" TextWrapping="Wrap" Text="Your port" VerticalAlignment="Top" Height="40" IsEnabled="False" TextAlignment="Center" FontSize="24"/>
+        <TextBox x:Name="ListenerPortTextBox" Height="40" Margin="10,315,10,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="24" TextChanged="IpTextBox_TextChanged"/>
+        <RadioButton x:Name="ClientRadioButton" Content="Client" HorizontalAlignment="Left" Margin="10,445,0,0" VerticalAlignment="Top" Height="56" Width="131" FontSize="20"/>
+        <RadioButton x:Name="ServerRadioButton" Content="Server" HorizontalAlignment="Left" Margin="141,445,0,0" VerticalAlignment="Top" Height="56" Width="137" FontSize="20"/>
 
     </Grid>
 </Window>

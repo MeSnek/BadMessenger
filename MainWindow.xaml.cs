@@ -1,8 +1,9 @@
 ﻿using System;
 using System.Net;
-using System.Net.Sockets;
 using System.Windows;
 using System.Windows.Controls;
+using System.Threading;
+using System.Windows.Input;
 
 
 namespace TalkWithOtherPeopleThing
@@ -12,35 +13,63 @@ namespace TalkWithOtherPeopleThing
     /// </summary>
     public partial class MainWindow : Window
     {
+        int a = 3;
+        public string username;
+        public CreateClient client;
+        public CreateServer server;
         public MainWindow()
         {
             InitializeComponent();
         }
-        public void ConnectToOtherPerson(string name, IPAddress clientIp, IPAddress hostIp, int port)
+        public void ConnectToOtherPerson(string name, string clientIpString, IPAddress clientIp, IPAddress hostIp, Int32 clientPort, Int32 listenerPort, int clientOrServer)
         {
-            //listener opens on HOST ipaddress 
-            TcpListener tcpListener = new TcpListener(hostIp, port);
-            tcpListener.Start();
-            tcpListener.BeginAcceptTcpClient(null, null);
-            
-            //recipients ip goes in client
-            TcpClient myTcpClient = new TcpClient();
-            myTcpClient.BeginConnect(clientIp, port, null, null);
-            System.Threading.Thread.Sleep(5000);
-            if (myTcpClient.Connected)
+            //0 = client
+            //1 = server
+            if (clientOrServer == 0)
             {
-                MessageBox.Show("You're connected!");
+                client = new CreateClient(clientIpString, clientPort);
+                a = 0;
             }
-            else
+            else if (clientOrServer == 1)
             {
-                MessageBox.Show("You weren't able to connect");
-                System.Windows.Application.Current.Shutdown();
+                server = new CreateServer(hostIp, listenerPort);
+                a = 1;
             }
-            //todo: actually send messages lol
+        }
+        public void DoWork(CreateServer server)
+        {
+            Thread serverThread = new Thread(new ThreadStart(serverThreadPoll));
+        }
+        public void DoWork(CreateClient client)
+        {
+            Thread clientThread = new Thread(new ThreadStart(clientThreadPoll));
+        }
+        //we hate threads!
+        private void clientThreadPoll()
+        {
+            client.Poll();
+        }
+        private void serverThreadPoll()
+        {
+            server.Poll();
         }
         private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
         {
 
+        }
+        private void OnEnterKeyDown(object sender, System.Windows.Input.KeyEventArgs e)
+        {
+            if (e.Key == Key.Enter)
+            {
+                if (a == 0)
+                {
+                    client.Send();
+                }
+                if (a == 1)
+                {
+                    server.Send();
+                }
+            }
         }
     }
 }
